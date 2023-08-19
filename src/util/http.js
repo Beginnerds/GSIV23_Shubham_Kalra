@@ -46,7 +46,7 @@ export async function getMovieDetails(movieId){
     const url = `https://api.themoviedb.org/3/movie/${movieId}?language=en-US`;
     const headers = {
         accept: 'application/json',
-        Authorization: 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiZGY3MzgzZDljZjMxOGM1OGEyMDA2ZGIwZGMyNWU1ZSIsInN1YiI6IjVlODg0YWFhNmRjNmMwMDAxMzgxNmRmOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.jNEVrAb9IvAdbbOXNLcl11x7cIB1SToIArkJDEQ43cY'
+        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiZGY3MzgzZDljZjMxOGM1OGEyMDA2ZGIwZGMyNWU1ZSIsInN1YiI6IjVlODg0YWFhNmRjNmMwMDAxMzgxNmRmOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.jNEVrAb9IvAdbbOXNLcl11x7cIB1SToIArkJDEQ43cY'
     }
     let response = await axios.get(url,{
         headers:headers
@@ -54,11 +54,33 @@ export async function getMovieDetails(movieId){
 
     response = response.data;
 
-    if(!response.success){
+    if(response.success == false){
         console.error("Requested failed with Error(s): ",response.status_message);
         return
     }
 
     return response;
+
+}
+
+export async function getMovieCredits(movieId){
+    const url = `https://api.themoviedb.org/3/movie/${movieId}/credits?language=en-US`;
+    const headers = {
+        accept: 'application/json',
+        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiZGY3MzgzZDljZjMxOGM1OGEyMDA2ZGIwZGMyNWU1ZSIsInN1YiI6IjVlODg0YWFhNmRjNmMwMDAxMzgxNmRmOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.jNEVrAb9IvAdbbOXNLcl11x7cIB1SToIArkJDEQ43cY'
+    }
+    let response = await axios.get(url,{
+        headers:headers
+    });
+
+    response = response.data;
+
+    // something went wrong with the request
+    if(response.success == false){
+        console.error("Requested failed with Error(s): ",response.status_message);
+        return
+    }
+
+    return response; 
 
 }
