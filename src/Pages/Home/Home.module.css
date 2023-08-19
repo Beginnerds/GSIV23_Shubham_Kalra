@@ -1,0 +1,10 @@
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    /* align-content: baseline; */
+    /* height: 100%; */
+}

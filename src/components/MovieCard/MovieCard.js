@@ -4,7 +4,7 @@ import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import { Link } from "react-router-dom";
 import { colors } from "../../util/colors";
 
-export default function MovieCard({movieId,title,rating,description,imageUrl}) {
+export default function MovieCard({movieId,title,rating,description,imageUrl,style={}}) {
 
   if(!movieId){
     console.error("Movie id is required");
@@ -17,7 +17,7 @@ export default function MovieCard({movieId,title,rating,description,imageUrl}) {
 
   return (
     <Link to={`/details/${movieId}`} style={{textDecoration:"none", display:"inline-block"}}>
-      <div data-testid="movie-card" className={styles.container}>
+      <div data-testid="movie-card" className={styles.container} style={style}>
         <div className={styles.imageContainer}>
           <img src={imageUrl} alt="Movie Poster" className={styles.image} />
         </div>

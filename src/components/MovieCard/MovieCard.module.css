@@ -1,24 +1,24 @@
 .container{
     width: 90%;
-    max-width: 300px;
-    height: 480;
+    width: 300px;
+    height: auto;
     overflow: none;
     border-radius: 12px;
     box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.3);
+    /* flex-basis: 1; */
     /* border: 1px solid red; */
-}
+}s
 
 .imageContainer{
     height: 75%;
     max-width: 100%;
-    border-top-left-radius: inherit;
-    border-top-right-radius: inherit;
 }
 
 .image{
     height: 100%;
     width: 100%;
-    border-radius: inherit;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
     object-fit: fill;
 }
 
@@ -26,8 +26,8 @@
     height: 25%;
     padding: 8px;
     background-color: white;
-    border-bottom-left-radius: inherit;
-    border-bottom-right-radius: inherit;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
 }
 
 .titleRatingContainer{
@@ -35,11 +35,15 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    
     /* background-color: red; */
 }
 
 .title{
-    
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: 3em;
+    line-height: 3em;
 }
 
 .rating{
