@@ -8,14 +8,16 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <Provider store={store}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" exact Component={Home} />
-          <Route path="/details/:movieId" Component={Details} />
-        </Routes>
-      </BrowserRouter>
-    </Provider>
+    <div className=".App">
+      <Provider store={store}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" exact Component={Home} />
+            <Route path="/details/:movieId" Component={Details} />
+          </Routes>
+        </BrowserRouter>
+      </Provider>
+    </div>
   );
 }
 

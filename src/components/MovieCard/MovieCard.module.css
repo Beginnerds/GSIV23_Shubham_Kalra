@@ -1,5 +1,5 @@
 .container{
-    width: 90%;
+    /* width: 90%; */
     width: 300px;
     height: auto;
     overflow: none;
@@ -70,5 +70,13 @@
     right: 0;
     transform: translateY(25%);
     
+}
+
+@media only screen and (max-width: 500px){
+
+    .container{
+        margin: 0 auto;
+    }
+
 }
 

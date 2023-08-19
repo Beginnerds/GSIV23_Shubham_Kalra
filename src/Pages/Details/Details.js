@@ -35,7 +35,7 @@ export default function Details() {
 
   return (
     <>
-    <div><SearchBar showSearchBar={false}/></div>
+    <div className={styles.SearchBarContainer}><SearchBar showSearchBar={false}/></div>
     <div className={styles.container}>
       {loading ? <h1>Loading...</h1> : null}
       {!loading ?
