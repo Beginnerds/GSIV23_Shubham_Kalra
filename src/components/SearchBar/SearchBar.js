@@ -6,7 +6,8 @@ import { colors } from "../../util/colors";
 import { Link } from "react-router-dom";
 
 export default function SearchBar({ setQuery, showSearchBar = true }) {
-  if (!setQuery || typeof setQuery != "function") {
+
+  if (showSearchBar && typeof setQuery !== "function") {
     console.error("Invalid setQuery passed.");
   }
 
