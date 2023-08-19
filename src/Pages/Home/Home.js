@@ -21,7 +21,7 @@ export default function Home() {
   const [searchPage, setSearchPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
 
-//   console.log(searching, searchQuery, searchPage, appData.moviesList.length);
+
 
   // for upcoming movies
   useEffect(() => {
@@ -46,7 +46,7 @@ export default function Home() {
   }, [searching, upcomingPage, searchPage, searchQuery]);
 
   function fetchMore() {
-    console.log("called");
+    // console.log("called");
     if (!searching) {
       setUpcomingPage((page) => page + 1);
     } else {
@@ -66,6 +66,10 @@ export default function Home() {
       setUpcomingPage(1);
 
     }
+  }
+
+  function onClickMovie(){
+    dispatch(updateMoviesList([]));
   }
 
   return (
@@ -96,6 +100,7 @@ export default function Home() {
               rating={data.vote_average}
               description={data.overview}
               style={{ margin: "16px 8px" }}
+              onClick={onClickMovie}
             />
           );
         })}
