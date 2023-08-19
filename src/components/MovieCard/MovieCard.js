@@ -11,7 +11,7 @@ export default function MovieCard({movieId,title,rating,description,imageUrl,sty
     return null
   };
 
-  if(!title || !rating || !description || !imageUrl){
+  if(!title || rating == undefined || !description || !imageUrl){
     console.warn("Missing one or more props, Card might not render all information")
   }
 
